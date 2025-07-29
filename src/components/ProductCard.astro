@@ -1,0 +1,63 @@
+---
+const { product } = Astro.props;
+
+// We will move the Instagram logic to the product detail page
+---
+
+<a href={`/product/${product.id}`} class="product-card-link">
+  <div class="product-card">
+    <img src={product.image} alt={product.name} />
+    <div class="card-content">
+      <h3>{product.name}</h3>
+      <p class="price">{product.price}</p>
+      <span class="view-details-button">View Details</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  /* This first rule removes the default blue underline from the link */
+  .product-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Makes the link take up the whole space */
+  }
+
+  .product-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 100%; /* Ensures all cards in a row are the same height */
+  }
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  .product-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+  .card-content {
+    padding: 20px;
+  }
+  .price {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+  /* Replaced the "Buy Now" button with a more appropriate "View Details" hint */
+  .view-details-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+</style>

@@ -1,0 +1,51 @@
+/* 1. CSS Variables for your Brand */
+/* This is where you define your brand's look. */
+/* Replace these placeholder values with your actual brand colors and fonts. */
+:root {
+  --font-heading: 'Playfair Display', serif; /* An elegant font for headings */
+  --font-body: 'Poppins', sans-serif;      /* A clean, modern font for text */
+
+  --color-primary: #D3AFA5;   /* Example: Soft Rose - MAIN BRAND COLOR */
+  --color-accent: #A89A8E;    /* Example: Muted Gold/Sage - For highlights */
+  --color-text: #444444;      /* Dark Charcoal for readable text */
+  --color-bg: #FCF9F7;        /* A warm, off-white background */
+  --color-white: #FFFFFF;
+}
+
+/* 2. Basic Reset & Mobile-First Defaults */
+/* This ensures your site looks good on all browsers. */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* 3. Global Container */
+/* A helper class to center content on all pages. */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0;
+}

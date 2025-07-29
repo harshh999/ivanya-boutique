@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <div class="container">
+    <div class="contact-content">
+      <h1>Get In Touch</h1>
+      <p>
+        Have a question or want to place an order? We'd love to hear from you! The best way to reach us is through WhatsApp or Instagram for a quick response.
+      </p>
+      <div class="contact-buttons">
+        <a href="https://wa.me/9173514531" class="contact-button" target="_blank">Chat on WhatsApp</a>
+        <a href="https://www.instagram.com/ivanya.in/" class="contact-button" target="_blank">Message on Instagram</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .contact-content {
+    max-width: 600px;
+    margin: 40px auto; /* Adds space top/bottom and centers */
+    text-align: center;
+  }
+  .contact-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+  .contact-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 20px; /* Space between buttons */
+    align-items: center; /* Center buttons horizontally */
+  }
+  .contact-button {
+    display: block;
+    width: 100%;
+    max-width: 350px; /* Limit button width */
+    padding: 18px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .contact-button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px #0000002a;
+  }
+</style>

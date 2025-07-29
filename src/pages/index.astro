@@ -1,16 +1,34 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products } from '../data/products.js';
 
+const featuredProducts = products.filter(product => product.featured === true);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <section class="hero container">
+    <img src="/images/ivanya-logo.jpg" alt="Ivanya Logo" class="hero-logo" />
+    <h1>Ivanya</h1>
+    <p class="tagline">Timeless Elegance, Woven with Tradition.</p>
+  </section>
+
+  <section class="container">
+    <h2>Featured Collection</h2>
+    <div class="product-grid">
+      {featuredProducts.map(product => (
+        <ProductCard product={product} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { text-align: center; padding-top: 20px; padding-bottom: 20px; }
+  .hero-logo { max-width: 130px; margin: 0 auto 1rem; }
+  .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+  .tagline { font-size: 1.2rem; color: var(--color-accent); }
+  .product-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+  @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+</style>

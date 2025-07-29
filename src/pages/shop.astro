@@ -1,0 +1,44 @@
+---
+// --- SCRIPT SECTION ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products } from '../data/products.js';
+// Note: We are using the entire 'products' list this time, no filter needed!
+---
+
+<BaseLayout>
+  <div class="container">
+    <h1>Our Collection</h1>
+    <div class="product-grid">
+      {products.map(product => (
+        <ProductCard product={product} />
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first: 1 column */
+    gap: 30px;
+  }
+
+  /* For tablets and larger screens */
+  @media (min-width: 600px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* For desktops */
+  @media (min-width: 900px) {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

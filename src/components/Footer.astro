@@ -1,0 +1,53 @@
+<footer>
+  <div class="container">
+    <p>Connect with us on Social Media</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/ivanya.in/" target="_blank">Instagram</a>
+      <a href="https://wa.me/9173514531" target="_blank">WhatsApp</a>
+    </div>
+    <p class="copyright">
+      &copy; {new Date().getFullYear()} Ivanya. All Rights Reserved.
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    text-align: center;
+    margin-top: 60px; /* Adds space above the footer */
+  }
+
+  /* We are overriding the global container padding for the footer */
+  .container {
+    padding: 40px 20px;
+  }
+
+  footer p {
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  footer a {
+    color: var(--color-white);
+    font-weight: normal;
+  }
+
+  .social-links {
+    margin: 20px 0;
+  }
+
+  .social-links a {
+    margin: 0 15px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    opacity: 0.7;
+  }
+</style>
